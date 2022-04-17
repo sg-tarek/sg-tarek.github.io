@@ -22,6 +22,12 @@
         <!--Title of the fan in the browser-->
         <title>BASATA Documentation</title>
 
+        <!--Python code snippet-->
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
     </head>
     
     <body data-spy="scroll" data-target="#toc">
@@ -71,8 +77,59 @@
               <div class="col-sm-9">
 
                 <h1>Supervised ML</h1>
-                <h2>Diff A</h2>
-                ...
+
+              <!-- Introducing function -->
+                <h2>Tuning</h2>
+                
+                <!-- insert code snippet -->
+                <code>
+                  tuning(X_train, y_train, model='rf', GridSearch=False, scoring=accuracy_score, random_seed=None, classification=True)
+                </code>
+
+                <p>
+                  This function is used to tune the hyperparameters of a machine learning model. It takes as input the training data, the target variable, the model to be tuned, the scoring function, the random seed and the classification flag.
+                </p>
+
+                <p>
+                  The function returns the best model and the best hyperparameters.
+                </p>
+
+                <!-- Explaining Parameters -->
+                <b>Parameters</b>
+                <br>
+                <br>
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <b>X: {array-like, sparse matrix}</b>
+                      <br>
+                      The training input samples.
+                      <br>
+                      <br>
+                      <b>y: array-like of shape (n_samples,)</b>
+                      <br>
+                      The target values (class labels in classification, real numbers in regression).
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Function Example / Start -->
+                <br>
+                <b>Example</b>
+                  <pre>
+                    <code class="python">
+                    def fib(n):
+                    a, b = 0, 1
+                      while a < n:
+                        print(a, end=' ')
+                        a, b = b, a+b
+                        print()
+                    fib(1000)
+                    </code>
+                  </pre>
+                
+                <!-- Function Example / End -->
+                
                 <h2>Diff B</h2>
                 ...
                 <h2>Diff C</h2>

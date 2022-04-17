@@ -53,3 +53,11 @@ nav[data-toggle="toc"] {
   }
   */
 }
+
+/* Code snippets */
+code {
+  background-color: lightblue;
+  color: black;
+  display: block;
+  padding: 20px;
+}
