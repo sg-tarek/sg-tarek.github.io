@@ -61,3 +61,45 @@ code {
   display: block;
   padding: 20px;
 }
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/ 
+  height: 200px;
+  background: white;
+  }
+
+  button, input[type="submit"] {
+    background-color: #d9edff;
+    border: 5px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    vertical-align: middle;
+}
+
+  button:hover, input[type="submit"]:hover {
+    background-color: green;
+    border-color: black;
+    color: white;
+    text-decoration: none;
+  }
+
+

@@ -30,7 +30,65 @@
               background-attachment: fixed;
               background-size: cover;
           }
+
+          h1 {
+            font-size: 6em;
+            color: white;
+            text-transform: uppercase;
+          }
+
+          h2 {
+            font-size: 5em;
+            color: white;
+            text-transform: uppercase;
+            font-family: 'Courier New', monospace;
+          }
         </style> 
+
+        <script>
+          document.addEventListener('DOMContentLoaded',function(event){
+          // array with texts to type in typewriter
+          var dataText = [ "Code less - Gain more"];
+          
+          // type one text in the typwriter
+          // keeps calling itself until the text is finished
+          function typeWriter(text, i, fnCallback) {
+            // chekc if text isn't finished yet
+            if (i < (text.length)) {
+              // add next character to h1
+            document.querySelector("h2").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+              // wait for a while and call this function again for next character
+              setTimeout(function() {
+                typeWriter(text, i + 1, fnCallback)
+              }, 100);
+            }
+            // text finished, call callback if there is a callback function
+            else if (typeof fnCallback == 'function') {
+              // call callback after timeout
+              setTimeout(fnCallback, 700);
+            }
+          }
+          // start a typewriter animation for a text in the dataText array
+          function StartTextAnimation(i) {
+            if (typeof dataText[i] == 'undefined'){
+                setTimeout(function() {
+                  StartTextAnimation(0);
+                }, 20000);
+            }
+            // check if dataText[i] exists
+            if (i < dataText[i].length) {
+              // text exists! start typewriter animation
+            typeWriter(dataText[i], 0, function(){
+              // after callback (and whole text has been animated), start next text
+              StartTextAnimation(i + 1);
+            });
+            }
+          }
+          // start the text animation
+          StartTextAnimation(0);
+        });
+        </script>
 
     </head>
     
@@ -69,12 +127,38 @@
 
         
         <!-- Body -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
 
+        <div class="container">
+          <div class="row">
+            <!-- sidebar, which will move to the top on a small screen -->
+            <div class="col-sm-8">
+              <h1>BASATA</h1>
+              <br>
+              <br>
+              <!-- add link to input-->
+              <a href="docs.html">
+                <input type="submit" value="Get Started">
+              </a>
 
+              <h2></h2>
+
+            </div>
+            <!-- Main Documentation Area -->
+            <div class="col-sm-4">
+              <img class="center-block" src="images/example1.png" width="700" height="1000">
+            
+          </div>
+          </div>
+        </div>
 
         <!--Footer at the end of the page-->
-        <footer class="text-center">
+        <footer id="site-footer" class="text-center">
               <!-- Grid container -->
               <div class="container">
 
