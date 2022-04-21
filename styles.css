@@ -76,14 +76,6 @@ label {
   white-space: pre;
 }
 
-#site-footer {
-  bottom: 0;
-  width: 100%;
-  /* Height of the footer*/ 
-  height: 120px;
-  background: white;
-}
-
 /*------------- Button frontpage --------------------*/
 
 button, input[type="submit"] {
