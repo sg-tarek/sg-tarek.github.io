@@ -105,18 +105,272 @@
                 The current version supports supervised machine learning and will be expanded to unsupervised followed by Time Series analysis. The project is open source and will grow through contributions by its users. Visit the GitHub page for further insights and examples.
                 <br>
                 <br>
+
+<!-- SECTION -->
+
                 <h1>Supervised ML</h1>
+
+<!-- FUNCTION -->
+
+              <!-- Introducing function -->
+              <h2>Null</h2>
+                
+              <!-- insert code snippet -->
+              <code>
+                null(DataFrame)
+              </code>
+              <br>
+              <p>
+                The null function gives you insight to number of null values.
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>DataFrame: {array-like, sparse matrix}</b>
+                    <br>
+                    A pandas DataFrame.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                 Work in progress...
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
+
+<!-- FUNCTION -->
+
+              <!-- Introducing function -->
+              <h2>Correlation</h2>
+  
+              <!-- insert code snippet -->
+              <code>
+                correlation(DataFrame)
+              </code>
+              <br>
+              <p>
+                The correlation function gives you insight to the correlation between numerical features.
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>DataFrame: {array-like, sparse matrix}</b>
+                    <br>
+                    A pandas DataFrame.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                  Work in progress...
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
+
+<!-- FUNCTION -->
+
+              <!-- Introducing function -->
+              <h2>FID</h2>
+  
+              <!-- insert code snippet -->
+              <code>
+                FID(DataFrame, ML_model, plot=True, length=5, height=5)
+              </code>
+              <br>
+              <p>
+                Function for creating a Feature Importance Dataframe (FID) and plotting it.
+                <br>
+                Only models with a feature_importances_ attribute are supported.
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>DataFrame: {array-like, sparse matrix}</b>
+                    <br>
+                    A pandas DataFrame.
+                    <br>
+                    <br>
+                    <b>ML_model: {object}</b>
+                    <br>
+                    A machine learning model.
+                    <br>
+                    <br>
+                    <b>plot: {boolean}</b>
+                    <br>
+                    Whether to plot the FID or not.
+                    <br>
+                    <br>
+                    <b>length: {int}</b>
+                    <br>
+                    The length of the plot.
+                    <br>
+                    <br>
+                    <b>height: {int}</b>
+                    <br>
+                    The height of the plot.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                  Work in progress...
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
+
+<!-- FUNCTION -->
+
+              <!-- Introducing function -->
+              <h2>Compare Models</h2>
+  
+              <!-- insert code snippet -->
+              <code>
+                compare_models(X, y, random_seed=None, classification=True)
+              </code>
+              <br>
+              <p>
+                Function for comparing feature importance of different ML models.
+                <br>
+                Only models with a feature_importances_ attribute are supported (Random Forest, Gradient Boosting, AdaBoost, Decision Tree, XGBoost, CatBoost).
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>X: {array-like, sparse matrix}</b>
+                    <br>
+                    The training input samples.
+                    <br>
+                    <br>
+                    <b>y: array-like of shape (n_samples,)</b>
+                    <br>
+                    The target values (class labels in classification, real numbers in regression).
+                    <br>
+                    <br>
+                    <b>random_seed: {int}</b>
+                    <br>
+                    The random seed for the models.
+                    <br>
+                    <br>
+                    <b>classification: {boolean}</b>
+                    <br>
+                    Whether the models are classification or regression.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                  Work in progress...
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
+
+<!-- FUNCTION -->
+
+              <!-- Introducing function -->
+              <h2>AutoML</h2>
+  
+              <!-- insert code snippet -->
+              <code>
+                automl(X_test, X_train, y_train, y_test, random_seed=None, classification=True)
+              </code>
+              <br>
+              <p>
+                Function for evaluating classification and regressional models.
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>X_test/X_train: {array-like, sparse matrix}</b>
+                    <br>
+                    The training input from the training/test set.
+                    <br>
+                    <br>
+                    <b>y_test/y_train: array-like of shape (n_samples,)</b>
+                    <br>
+                    The target values in the training/test set (class labels in classification, real numbers in regression).
+                    <br>
+                    <br>
+                    <b>random_seed: {int}</b>
+                    <br>
+                    The random seed for the models.
+                    <br>
+                    <br>
+                    <b>classification: {boolean}</b>
+                    <br>
+                    Whether the models are classification or regression.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                  Work in progress...
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
+
+<!-- FUNCTION -->
 
               <!-- Introducing function -->
                 <h2>Tuning</h2>
                 
                 <!-- insert code snippet -->
                 <code>
-                  tuning(X_train, y_train, model='rf', GridSearch=False, scoring=accuracy_score, random_seed=None, classification=True)
+                  tuning(X, y, model='rf', GridSearch=False, scoring=accuracy_score, random_seed=None, classification=True)
                 </code>
-
+                <br>
                 <p>
-                  This function is used to tune the hyperparameters of a machine learning model. It takes as input the training data, the target variable, the model to be tuned, the scoring function, the random seed and the classification flag.
+                  This function is used to tune the hyperparameters of a machine learning model using GridSearchCV or RandomizedSearchCV. It takes as input the training data, the target variable, the model to be tuned, the scoring function, the random seed and the classification flag.
                 </p>
 
                 <p>
@@ -138,6 +392,31 @@
                       <b>y: array-like of shape (n_samples,)</b>
                       <br>
                       The target values (class labels in classification, real numbers in regression).
+                      <br>
+                      <br>
+                      <b>model: string</b>
+                      <br>
+                      The model to be tuned. Models: 'rf', 'gbdt', 'ab', 'dt', 'knn', 'svm', 'mlp', 'xgb' or 'cb'
+                      <br>
+                      <br>
+                      <b>GridSearch: boolean</b>
+                      <br>
+                      If True, GridSearchCV is used to tune the hyperparameters, else RandomizedSearchCV is used.
+                      <br>
+                      <br>
+                      <b>scoring: string</b>
+                      <br>
+                      The scoring function to be used. Scoring: accuracy_score, precision_score, recall_score, f1_score, mean_squared_error, r2_score
+                      <br>
+                      <br>
+                      <b>random_seed: int</b>
+                      <br>
+                      The random seed to be used.
+                      <br>
+                      <br>
+                      <b>classification: boolean</b>
+                      <br>
+                      If True, classification is used.
                     </p>
                   </div>
                 </div>
@@ -147,21 +426,15 @@
                 <b>Example</b>
                   <pre>
                     <code class="python">
-                    def fib(n):
-                    a, b = 0, 1
-                      while a < n:
-                        print(a, end=' ')
-                        a, b = b, a+b
-                        print()
-                    fib(1000)
+                   Work in progress...
                     </code>
                   </pre>
                 
                 <!-- Function Example / End -->
-                
-                <h2>Diff B</h2>
-                ...
-                <h2>Diff C</h2>
+
+<!-- FUNCTION -->
+
+<!-- SECTION -->
 
                 <h1>Time Series</h1>
                 <h2>Diff A</h2>
