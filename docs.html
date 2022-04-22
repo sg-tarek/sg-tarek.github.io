@@ -121,7 +121,7 @@
               </code>
               <br>
               <p>
-                The null function gives you insight to number of null values.
+                The null function gives you insight to number of null values - Table and Graph.
               </p>
 
               <!-- Explaining Parameters -->
@@ -143,7 +143,12 @@
               <b>Example</b>
                 <pre>
                   <code class="python">
-                 Work in progress...
+                    from basata.datasets import get_data
+                    from basata.supervised import *
+
+                    df = get_data("titanic")
+                    null(df)
+
                   </code>
                 </pre>
               
@@ -182,7 +187,56 @@
               <b>Example</b>
                 <pre>
                   <code class="python">
-                  Work in progress...
+                    from basata.datasets import get_data
+                    from basata.supervised import *
+
+                    df = get_data("titanic")
+                    correlation(df)
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
+
+<!-- FUNCTION -->
+
+              <!-- Introducing function -->
+              <h2>EDA</h2>
+  
+              <!-- insert code snippet -->
+              <code>
+                eda(DataFrame)
+              </code>
+              <br>
+              <p>
+                The Exploratory Data Analysis (EDA) function is used to explore the data.
+                <br>
+                Using the sweetviz library, the data is visualized in a variety of ways in an HTML file.
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>DataFrame: {array-like, sparse matrix}</b>
+                    <br>
+                    A pandas DataFrame.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                    from basata.datasets import get_data
+                    from basata.supervised import *
+
+                    df = get_data("titanic")
+                    eda(df)
                   </code>
                 </pre>
               
@@ -243,7 +297,22 @@
               <b>Example</b>
                 <pre>
                   <code class="python">
-                  Work in progress...
+                    from basata.datasets import get_data
+                    from basata.supervised import *
+                    from sklearn.ensemble import RandomForestClassifier
+                    from sklearn.model_selection import train_test_split
+
+                    df = get_data("titanic")
+
+                    X = df.drop(columns=["Survived"])
+                    y = df["Survived"]
+
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+                    model = RandomForestClassifier(n_estimators=100, random_state=42)
+                    model.fit(X_train, y_train)
+
+                    FID(X_train, model)
                   </code>
                 </pre>
               
@@ -396,7 +465,7 @@
                       <br>
                       <b>model: string</b>
                       <br>
-                      The model to be tuned. Models: 'rf', 'gbdt', 'ab', 'dt', 'knn', 'svm', 'mlp', 'xgb' or 'cb'
+                      The model to be tuned. Models: 'rf', 'gbdt', 'ab', 'dt', 'knn', 'svm', 'mlp', 'xgb', 'cb', 'lgbm'.
                       <br>
                       <br>
                       <b>GridSearch: boolean</b>
@@ -426,11 +495,101 @@
                 <b>Example</b>
                   <pre>
                     <code class="python">
-                   Work in progress...
+                      from basata.datasets import get_data
+                      from basata.supervised import *
+                      from sklearn.model_selection import train_test_split
+  
+                      df = get_data("titanic")
+  
+                      X = df.drop(columns=["Survived"])
+                      y = df["Survived"]
+  
+                      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+  
+                      tuning(X_train, y_train, model='rf', GridSearch=True, scoring=accuracy_score)
                     </code>
                   </pre>
                 
                 <!-- Function Example / End -->
+
+<!-- FUNCTION -->
+
+              <!-- Introducing function -->
+              <h2>XAI</h2>
+                
+              <!-- insert code snippet -->
+              <code>
+                xai(X_train, X_test, model=None, mode='classification', observation=0, feature_selection='none')
+              </code>
+              <br>
+              <p>
+                The eXplainable AI (XAI) function is used to explain the model's predictions. The model uses LIME to explain the predictions of the model.
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>X_train: {array-like, sparse matrix}</b>
+                    <br>
+                    The training input samples.
+                    <br>
+                    <br>
+                    <b>X_test: {array-like, sparse matrix}</b>
+                    <br>
+                    The test input samples.
+                    <br>
+                    <br>
+                    <b>model: {model}</b>
+                    <br>
+                    The model to be explained.
+                    <br>
+                    <br>
+                    <b>mode: {string}</b>
+                    <br>
+                    The mode of the model. Can be 'classification' or 'regression'.
+                    <br>
+                    <br>
+                    <b>observation: {int}</b>
+                    <br>
+                    The observation to be explained.
+                    <br>
+                    <br>
+                    <b>feature_selection: {string}</b>
+                    <br>
+                    The feature selection method. Can be 'none', 'lasso_path' or 'auto'.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                    from basata.datasets import get_data
+                    from basata.supervised import *
+                    from sklearn.ensemble import RandomForestClassifier
+                    from sklearn.model_selection import train_test_split
+
+                    df = get_data("titanic")
+
+                    X = df.drop(columns=["Survived"])
+                    y = df["Survived"]
+
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+                    model = RandomForestClassifier(n_estimators=100, random_state=42)
+                    model.fit(X_train, y_train)
+
+                    xai(X_train, X_test, model=model)
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
 
 <!-- FUNCTION -->
 
