@@ -76,6 +76,12 @@ label {
   white-space: pre;
 }
 
+#site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 /*------------- Button frontpage --------------------*/
 
 button, input[type="submit"] {
