@@ -38,7 +38,7 @@
         <!--Navigation bar from Bootstrap - Menu at the top - Copy to all html files -->
         <nav id="navbar" class="navbar navbar-light bg-light">
 
-        <!-- add title above navigation bar-->
+        <!-- add logo to the navigation bar-->
         <a class="navbar-brand" href="#">
           <img src="images/icon.png" alt="" width="35" height="28" class="d-inline-block align-text-top">
           BASATA Documentation
@@ -106,7 +106,52 @@
                 <br>
                 <br>
 
-<!-- SECTION -->
+<!-- SECTION (Datasets) START -->
+
+                <h1>Datasets</h1>
+
+              <!-- Introducing function -->
+              <h2>Get data</h2>
+                              
+              <!-- insert code snippet -->
+              <code>
+                get_data(Dataset)
+              </code>
+              <br>
+              <p>
+                This function loads sample datasets from git repository. A list of available datasets can be found <a class="nav-link" href="https://github.com/sg-tarek/BASATA/tree/main/Datasets">here</a>. 
+              </p>
+
+              <!-- Explaining Parameters -->
+              <b>Parameters</b>
+              <br>
+              <br>
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b>Dataset: string</b>
+                    <br>
+                    Name of the dataset.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Function Example / Start -->
+              <br>
+              <b>Example</b>
+                <pre>
+                  <code class="python">
+                    from basata.datasets import get_data
+                    df = get_data("titanic")
+
+                  </code>
+                </pre>
+              
+              <!-- Function Example / End -->
+
+<!-- SECTION (Datasets) END -->
+
+<!-- SECTION (Supervised ML) START -->
 
                 <h1>Supervised ML</h1>
 
@@ -593,7 +638,9 @@
 
 <!-- FUNCTION -->
 
-<!-- SECTION -->
+<!-- SECTION (Supervised ML) END -->
+
+<!-- SECTION (TIME SERIES) START -->
 
                 <h1>Time Series</h1>
                 <h2>Diff A</h2>
@@ -601,7 +648,9 @@
                 <h2>Diff B</h2>
                 ...
                 <h2>Diff C</h2>
-              
+
+<!-- SECTION (TIME SERIES) END -->
+
             </div>
             </div>
           </div>
